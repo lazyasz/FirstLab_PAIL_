@@ -9,19 +9,16 @@ global _start
 _start:
     mov esi, array
     mov cl, [n]
-    xor ax, ax
+    xor bl, bl
 
 loop_start:
     lodsb
     sub al, '0'
-    add al, bl
-    aaa
+    add bl, al
     loop loop_start
 
-    add al, '0'
-    mov [sum], al
+    mov [sum], bl
 
     mov eax, 1
     xor ebx, ebx
     int 0x80
-
